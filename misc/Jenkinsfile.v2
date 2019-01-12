@@ -24,7 +24,7 @@ node {
      mysql.stop()
    }                                     
    stage('docker build/push') {            
-     docker.withRegistry('572198091204.dkr.ecr.ap-southeast-2.amazonaws.com/jenkins-demo', 'ecr:ap-southeast-2:jenkins-demo') {
+     docker.withRegistry('572198091204.dkr.ecr.ap-southeast-2.amazonaws.com/jenkins-demo', 'ECR_AWS_Docker_Demo') {
        def app = docker.build("jenkins-demo:${commit_id}", '.').push()
      }                                     
    }                                       
