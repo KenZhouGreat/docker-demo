@@ -17,7 +17,7 @@ node {
    stage('docker build/push') {
    
       
-     docker.withRegistry('https://572198091204.dkr.ecr.ap-southeast-2.amazonaws.com', 'ecr:southeast-2:ECR_AWS_Docker_Demo') {
+     docker.withRegistry('https://572198091204.dkr.ecr.ap-southeast-2.amazonaws.com', 'ecr:ECR_AWS_Docker_Demo') {
        def app = docker.build("jenkins-demo:${commit_id}", '.').push()
      }                                     
    }                                       
