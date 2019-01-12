@@ -27,7 +27,7 @@ node {
    //cleanup current user docker credentials
         sh 'rm  ~/.dockercfg || true'
         sh 'rm ~/.docker/config.json || true'
-     docker.withRegistry('572198091204.dkr.ecr.ap-southeast-2.amazonaws.com/jenkins-demo', 'ECR_AWS_Docker_Demo') {
+     docker.withRegistry('572198091204.dkr.ecr.ap-southeast-2.amazonaws.com', 'ECR_AWS_Docker_Demo') {
        def app = docker.build("jenkins-demo:${commit_id}", '.').push()
      }                                     
    }                                       
